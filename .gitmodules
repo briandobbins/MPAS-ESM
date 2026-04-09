@@ -10,7 +10,7 @@
    path = src/CDEPS
    url = https://github.com/uturuncoglu/CDEPS
    branch = feature/esmx_build
-[submodule "src/CMEPS"]
-   path = src/CMEPS
+[submodule "src/CMEPS-interface/CMEPS"]
+   path = src/CMEPS-interface/CMEPS
    url = https://github.com/uturuncoglu/CMEPS
    branch = feature/esmx_build
