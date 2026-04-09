@@ -223,11 +223,11 @@ fi
 # CMEPS
 if [[ "${dict_comps["cmeps"]}" == "true" ]]; then
   echo "  cmeps:" >> esmxBuild.yaml
-  echo "    source_dir: src/CMEPS" >> esmxBuild.yaml
+  echo "    source_dir: src/CMEPS-interface" >> esmxBuild.yaml
   echo "    build_type: $build_type" >> esmxBuild.yaml
-  echo "    build_args: \"-DPIO_C_LIBRARY=$PIO_C_LIBRARY -DPIO_C_INCLUDE_DIR=$PIO_C_INCLUDE_DIR -DPIO_Fortran_LIBRARY=$PIO_Fortran_LIBRARY -DPIO_Fortran_INCLUDE_DIR=$PIO_Fortran_INCLUDE_DIR -DCMAKE_Fortran_FLAGS=-I${PWD}/build/docn/share\"" >> esmxBuild.yaml
+  echo "    build_args: \"-DCESMCOUPLED=ON -DPIO_C_LIBRARY=$PIO_C_LIBRARY -DPIO_C_INCLUDE_DIR=$PIO_C_INCLUDE_DIR -DPIO_Fortran_LIBRARY=$PIO_Fortran_LIBRARY -DPIO_Fortran_INCLUDE_DIR=$PIO_Fortran_INCLUDE_DIR -DCMAKE_Fortran_FLAGS=-I${PWD}/build/docn/share\"" >> esmxBuild.yaml
   echo "    fort_module: med.mod" >> esmxBuild.yaml
-  echo "    libraries: cmeps cmeps_share cdeps_share" >> esmxBuild.yaml
+  echo "    libraries: cmeps cdeps_share" >> esmxBuild.yaml
 fi
 
 # Build application

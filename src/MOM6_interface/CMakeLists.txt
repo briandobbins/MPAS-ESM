@@ -28,6 +28,12 @@ endif()
 include("mom6_files.cmake")
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
+option(CESMCOUPLED "Enable CESM specific code" OFF)
+
+if(CESMCOUPLED)
+  add_definitions(-DCESMCOUPLED)
+endif()
+
 # Find NetCDF
 if(NOT NetCDF_FOUND)
   find_package(NetCDF REQUIRED C Fortran)
